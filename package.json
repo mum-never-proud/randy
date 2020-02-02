@@ -1,0 +1,33 @@
+{
+  "name": "randy",
+  "version": "1.0.0",
+  "description": "generate unique ids",
+  "main": "./src/randy.js",
+  "scripts": {
+    "build": "./node_modules/.bin/grunt",
+    "test": "./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mum-never-proud/randy.git"
+  },
+  "keywords": [
+    "random",
+    "id",
+    "rand",
+    "randy",
+    "number",
+    "generator"
+  ],
+  "author": "mum-never-proud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mum-never-proud/randy/issues"
+  },
+  "homepage": "https://github.com/mum-never-proud/randy#readme",
+  "devDependencies": {
+    "grunt": "1.0.4",
+    "grunt-contrib-uglify": "4.0.1",
+    "jest": "25.1.0"
+  }
+}
