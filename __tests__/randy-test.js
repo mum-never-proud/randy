@@ -9,7 +9,7 @@ describe('randy test', function() {
     expect(randy().length).toEqual(5);
   });
 
-  // to cover any value length than 5
+  // to cover any value length less than 5
 
   it('should generate random id of length 4', function() {
     expect(randy(4).length).toEqual(4);
