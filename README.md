@@ -1,2 +1,5 @@
+# Demo
+Checkout out <a href="https://mum-never-proud.github.io/randy/">randy</a>!
+
 # randy
-generates random id (not sure about 100% uniqueness) but works for a captcha 
+generates random id (not 100% unique)
