@@ -1,0 +1,282 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>randy</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/solarized-dark.min.css"
+    rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      font-family: "Fira Code";
+      background-color: #121212;
+      color: #FB3;
+    }
+
+    h1,
+    h3,
+    h6 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    table.table {
+      color: #FB3;
+    }
+
+    table.table td {
+      text-align: center;
+      max-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 0;
+    }
+
+    .hljs {
+      background: #222831;
+    }
+
+    .hljs-number,
+    .hljs-string {
+      color: #FB3;
+    }
+
+    footer {
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="display-4 text-center mt-3">randy</p>
+        <p class="text-center font-italic mt-3">Random ID generator</p>
+      </div>
+    </div>
+    <div class="row mt-3 justify-content-md-center">
+      <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <form>
+          <div class="form-group">
+            <label for="random-number-length">length <small>(defaults to 5)</small></label>
+            <input class="form-control" id="number-length" value="5" type="text" autocomplete="off" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="alert alert-warning text-center" role="alert">
+          <p>The current buffer can hold upto <b>10,000</b> entries, post which the buffer is cleared.</p>
+          <p>At any point the collisions can be detected upto <b>10,000</b> numbers.</p>
+        </div>
+        <p class="h4">Collisions (<span id="count">0</span>)</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <p class="h3"><u>Syntax</u>:</p>
+      </div>
+      <div class="col-12">
+        <pre>
+          <code class="javascript">
+            /**
+             * @param {string} len [len = 5] - length of the random string
+             * @param {string} base [base = 36] - any valid numerical base
+             */
+            window.randy(len, base);
+          </code>
+        </pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <footer>
+          <p class="text-center font-italic">made with much ❤️</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/mum-never-proud/randy/lib/randy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+    type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"
+    type="text/javascript"></script>
+  <script>
+    (function () {
+      const DEFAULT_NUMBER_LENGTH = 5;
+      const entries = [];
+      const tr = Array.from(document.querySelectorAll('table.table>tbody>tr'))
+        .map(tr => Array.from(tr.querySelectorAll('td')));
+      const count = document.querySelector('#count');
+      let numberLength = 0;
+      let collisions = 0;
+
+      hljs.initHighlightingOnLoad();
+      document.getElementById('number-length').addEventListener('input', function(e) {
+        entries.length = 0;
+        numberLength = e.target.value;
+      });
+      window.setInterval(updateTableWithRandomNumbers, 1000);
+      updateTableWithRandomNumbers();
+      function updateTableWithRandomNumbers() {
+        if (entries.length >= 10000) {
+          entries.length = 0;
+        }
+        for (let i = 0; i < 10; i++) {
+          const td = tr[i];
+
+          for (let j = 0; j < 10; j++) {
+            const randomNumber = window.randy(parseInt(numberLength) || DEFAULT_NUMBER_LENGTH);
+
+            if (entries.includes(randomNumber)) {
+              count.innerHTML = ++collisions;
+            }
+
+            entries.push(randomNumber);
+
+            td[j].setAttribute('title', randomNumber);
+            td[j].innerHTML = randomNumber;
+          }
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
