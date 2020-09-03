@@ -2,10 +2,11 @@
   "name": "randy",
   "version": "1.0.0",
   "description": "generate unique ids",
-  "main": "./src/randy.js",
+  "main": "./dist/randy.min.js",
   "scripts": {
-    "build": "./node_modules/.bin/grunt",
-    "test": "./node_modules/.bin/jest"
+    "build": "grunt",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
