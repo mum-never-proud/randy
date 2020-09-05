@@ -3,9 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
   <title>randy</title>
-
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link href="https://cdn.jsdelivr.net/gh/mum-never-proud/unified-demo-theme/dist/styles/theme.min.css" rel="stylesheet" type="text/css" />
@@ -15,8 +13,6 @@
     <h1 class="text-center">randy</h1>
   </div>
   <div class="container">
-    <div class="row">
-    </div>
     <div class="row mt-3 justify-content-md-center">
       <div class="col-12 col-md-4 col-lg-4 col-xl-4">
         <form>
@@ -170,6 +166,45 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/gh/mum-never-proud/randy/dist/randy.min.js" type="text/javascript"></script>
-  <script src="./assets/js/randy-demo.js" type="text/javascript"></script>
+  <script>
+    (function () {
+      const DEFAULT_NUMBER_LENGTH = 5;
+      const entries = [];
+      const tr = Array.from(document.querySelectorAll('table.table>tbody>tr'))
+        .map(tr => Array.from(tr.querySelectorAll('td')));
+      const count = document.querySelector('#count');
+      let numberLength = 0;
+      let collisions = 0;
+
+      function updateTableWithRandomNumbers() {
+        if (entries.length >= 10000) {
+          entries.length = 0;
+        }
+        for (let i = 0; i < 10; i++) {
+          const td = tr[i];
+
+          for (let j = 0; j < 10; j++) {
+            const randomNumber = window.randy(parseInt(numberLength) || DEFAULT_NUMBER_LENGTH);
+
+            if (entries.includes(randomNumber)) {
+              count.innerHTML = ++collisions;
+            }
+
+            entries.push(randomNumber);
+
+            td[j].setAttribute('title', randomNumber);
+            td[j].innerHTML = randomNumber;
+          }
+        }
+      }
+
+      document.getElementById('number-length').addEventListener('input', function(e) {
+        entries.length = 0;
+        numberLength = e.target.value;
+      });
+      window.setInterval(updateTableWithRandomNumbers, 1000);
+      updateTableWithRandomNumbers();
+    })();
+  </script>
 </body>
 </html>
